@@ -17,13 +17,20 @@ public class Scheduler {
     System.out.println("Java cron job expressions %s%n".formatted(stringDate));
   }
 
-
   @Scheduled(fixedRate = 1000)
   public void fixedRateScheduler(){
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     Date now = new Date();
     String stringDate = sdf.format(now);
     System.out.println("Fixed Rate Scheduler %s%n".formatted(stringDate));
+  }
+
+  @Scheduled(fixedDelay = 1000, initialDelay = 300000)
+  public void fixedDelayScheduler(){
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    Date now = new Date();
+    String stringDate = sdf.format(now);
+    System.out.println("Fixed Delay Scheduler %s%n".formatted(stringDate));
   }
 
 }
